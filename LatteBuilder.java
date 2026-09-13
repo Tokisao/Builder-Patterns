@@ -17,6 +17,7 @@ public class LatteBuilder implements CoffeeBuilder {
 
     @Override
     public Coffee build() {
+        // Latte requires milk and cannot be small — validate at build time
         if ("none".equalsIgnoreCase(milk))
             throw new IllegalStateException("Latte requires milk");
         if ("small".equalsIgnoreCase(size))
