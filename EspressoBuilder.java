@@ -17,6 +17,7 @@ public class EspressoBuilder implements CoffeeBuilder {
 
     @Override
     public Coffee build() {
+        // Espresso forbids milk, syrup, and non-small sizes — validate at build time
         if (!"none".equalsIgnoreCase(milk))
             throw new IllegalStateException("Espresso cannot contain milk");
         if (!"none".equalsIgnoreCase(syrup))
